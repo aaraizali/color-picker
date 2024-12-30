@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, ChangeEvent } from "react";
-import { Card, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card } from "@/components/ui/card"; // Removed unused CardTitle and CardDescription imports
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export default function ColorPicker() {
   const [color, setColor] = useState<string>("#000000");
-  const [copySuccess, setCopySuccess] = useState<string>("");
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [copySuccess, setCopySuccess] = useState<string>(""); // Success message for copying color
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // Dark mode state
 
   const handleColorChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setColor(e.target.value);
